@@ -1,0 +1,75 @@
+/* Estilos para el contenedor del catálogo */
+.catalog-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fafbfd;
+}
+
+/* Estilos para el título del catálogo */
+.catalog-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los elementos del catálogo */
+.catalog-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Estilos para cada elemento del catálogo */
+.catalog-item {
+  width: calc(33.33% - 20px); /* Ancho de aproximadamente un tercio, con margen entre elementos */
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el enlace del elemento */
+.item-link {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Estilos para la imagen del elemento */
+.item-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para los detalles del elemento */
+.item-details {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilos para el nombre del elemento */
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Estilos para la descripción del elemento */
+.item-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el precio del elemento */
+.item-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.catalog-title {
+  font-size: 36px; /* Tamaño de fuente más grande */
+  margin-bottom: 20px;
+  text-align: center; /* Centrar el texto */
+  font-family: 'Arial', sans-serif; /* Cambiar el tipo de letra */
+  color: #333; /* Cambiar el color del texto */
+}

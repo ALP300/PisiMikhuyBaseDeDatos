@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+<h1 class="card-header" th:text="${titulo}"></h1>
+	
+	<div class="container py-4">
+		<div class="card bg-light">
+			
+			<div class="card-body">
+				
+				<ul class="list-group">
+					<li class="list-group-item" th:text="${cliente.iden}"></li>
+					<li class="list-group-item" th:text="${cliente.nom}"></li>
+					<li class="list-group-item" th:text="${cliente.apePa}"></li>
+					<li class="list-group-item" th:text="${cliente.apeMa}"></li>
+					<li class="list-group-item" th:text="${cliente.correo}"></li>
+					<li class="list-group-item" th:text="${cliente.fecCre}"></li>
+				</ul>
+			<form th:href="@{'/carrito/'+${cliente.iden}+'/'+${carrito.idCar}}" method="post">
+			    <table class="table table-bordered table-striped my-4">
+			        <thead class="thead-inverse">
+			            <tr>
+			                <th>Pago total antes del descuento</th>
+			                <th>Total de Platos Comprados</th>
+			                <th>Fecha del Comprobante</th>
+			                <th>Regalo Utilizado</th>
+			                <th>Pago total con descuento</th>
+			                <th>Tipo de Comprobante</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+			                <td th:text="${carrito.pagCar}"></td>
+			                <td th:text="${carrito.totPlaCom}"></td>
+			                <td th:text="${carrito.fecha}"></td>
+			                <td th:text="${regalo}"></td>
+			                <td th:text="${carrito.totPagFin}"></td>
+			                <td>
+			                    <select name="tCompro">
+			                        <option value="">Elije Comprobante</option>
+			                        <option value="Boleta">Boleta</option>
+			                        <option value="Factura">Factura</option>
+			                    </select>
+			                </td>
+			            </tr>
+			        </tbody>
+			    </table>
+			    <button type="submit" class="btn btn-primary">
+			        <i class="fas fa-sign-in-alt"></i> PAGAR
+			    </button>
+			</form>
+
+			<br></br>
+			<table class="table table-bordered table-spriped my-4">
+				<thead class="thead-inverse">
+					<tr>
+						<th>Id Detalle Carrito</th>
+						<th>Cantidad total del producto</th>
+						<th>Total Pago por Detalle Carrito</th>
+						<th>Id del Carrito</th>
+						<th>Producto Comprado</th>
+					</tr>
+				</thead>
+				
+				
+				<tbody>
+					<tr th:each="carrito: ${items}">
+						<td th:text="${carrito.idDetCar}"></td>
+						<td th:text="${carrito.cantPla}"></td>
+						<td th:text="${carrito.totPagPla}"></td>
+						<td th:text="${carrito.comprobante}"></td>
+						<td th:text="${carrito.producto}"></td>
+					</tr>
+
+				</tbody>
+			</table>
+			
+			</div>
+		</div>
+	</div>
+	
+	
+	<footer></footer>
+</body>
+</html>
